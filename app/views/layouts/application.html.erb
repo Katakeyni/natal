@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Natals</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="">
+<header>
+	<nav class="">
+		<ul>
+			<li><a href="#"> Votre Score :  13 </a></li>
+			<li><a href="#">Nombre de points :  275</a></li>
+			<li><a href="#"> Mes Défis </a></li>
+			<li><a href="#">Compétitions</a></li>
+		</ul>
+	</nav>
+</header>
+
+
+<%= yield %>
+</div>
+</body>
+</html>

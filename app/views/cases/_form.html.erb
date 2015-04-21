@@ -1,0 +1,28 @@
+<%= form_for @case, html: { multipart: true } do |f| %>
+  <% if @case.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@case.errors.count, "error") %> prohibited this case from being saved:</h2>
+
+      <ul>
+      <% @case.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+  <div class="col-md-5">
+      <div class="form-group">
+        <label> Donner la réponse du Cas</label>
+        <%= f.text_field :response, class: 'form-control' %>   
+      </div>
+
+    <%= f.fields_for :pictures do |pictures_form| %>
+      <%= pictures_form.file_field :file %>
+    <% end %>
+    <%= f.submit %>    
+  </div>
+
+  </div>
+<% end %>
