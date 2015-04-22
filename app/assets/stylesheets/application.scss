@@ -1,21 +1,35 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body 
+{
+	background: #e9eaed;
+	header
+	{
+		color:#fff;
+
+	}
+}
 .col-md-8{
-	width:640px;
+	width:440px;
 	.row
 	{
 		display:block;
 		.image-case
 		{
-			height:300px;
-			width:300px;
+			height:200px;
+			width:200px;
 			background:#000;
 			margin:10px;
 			float:left;
 		}
 
 	}
+}
+.btn
+{
+	border-radius:0;
+	border:none;
 }
 .pBoard
 {
@@ -70,5 +84,33 @@ header
 				}
 			}
 		}
+	}
+}
+#picture_file_preview
+{
+	max-height:300px;
+	max-width: 300px;
+}
+#picture_file
+{
+	display:none;
+}
+.picturesContainer{
+	display:block;
+	position:relative;
+	width:300px;
+	height:300px;
+	float:left;
+	margin:5px;
+	.pictureThumb{
+		position:absolute;
+		top:0;
+		left:0;
+	}
+	.pictureActions
+	{
+		position:absolute;
+		bottom:0;
+		right:0;
 	}
 }

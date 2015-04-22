@@ -16,7 +16,7 @@ class CasesController < ApplicationController
   # GET /cases/new
   def new
     @case = Case.new
-    4.times { @case.pictures.build} 
+    4.times { @case.pictures} 
   end
 
   # GET /cases/1/edit
@@ -71,6 +71,6 @@ class CasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def case_params
-      params.require(:case).permit(:response, :case_picture_link)
+      params.require(:case).permit(:response, picture: [:file])
     end
 end

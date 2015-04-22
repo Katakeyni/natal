@@ -11,16 +11,41 @@
 <header>
 	<nav class="">
 		<ul>
-			<li><a href="#"> Votre Score :  13 </a></li>
-			<li><a href="#">Nombre de points :  275</a></li>
-			<li><a href="#"> Mes Défis </a></li>
+			<li><a href="#"> My Score :  13 </a></li>
+			<li><a href="#">points :  275</a></li>
+			<li><a href="#">Challenges </a></li>
 			<li><a href="#">Compétitions</a></li>
+			<li>
+				<div class="dropdown">
+				  <div id="CaseMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  	Cas 
+				    <span class="caret"></span>
+				  </div>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="CaseMenu">
+				  <li> <%= link_to "Case list", controller:"cases" %></li>
+				  <li> <%= link_to "New Case", new_case_path %></li>
+				  </ul>
+				</div>
+			</li>
+			<li>
+				<div class="dropdown">
+				  <div id="CaseMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				  		Upload Picture
+				    <span class="caret"></span>
+				  </div>
+				  <ul class="dropdown-menu" role="menu" aria-labelledby="CaseMenu">
+				  <li> <%= link_to "Pictures List", controller:"pictures" %></li>
+				  <li> <%= link_to "New Picture", new_picture_path %></li>
+				  </ul>
+				</div>
+			</li>
 		</ul>
 	</nav>
 </header>
+<div class="container">
+	<%= yield %>
+</div>
 
-
-<%= yield %>
 </div>
 </body>
 </html>

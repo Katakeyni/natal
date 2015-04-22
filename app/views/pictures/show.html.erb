@@ -1,4 +1,4 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @picture.file.url %>
+<%= image_tag @picture.file.url(:thumbsquare) %>
 <%= link_to 'Edit', edit_picture_path(@picture) %> |
 <%= link_to 'Back', pictures_path %>

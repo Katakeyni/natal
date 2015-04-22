@@ -18,11 +18,12 @@
         <%= f.text_field :response, class: 'form-control' %>   
       </div>
 
-    <%= f.fields_for :pictures do |pictures_form| %>
-      <%= pictures_form.file_field :file %>
+    <%= f.fields_for :case_picture_link do |link| %>
+        <%= link.file_field :picture %>
     <% end %>
     <%= f.submit %>    
   </div>
+
 
   </div>
 <% end %>

@@ -1,0 +1,2 @@
+module CasePictureLinkHelper
+end

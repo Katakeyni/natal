@@ -10,10 +10,22 @@
       </ul>
     </div>
   <% end %>
-    <%= f.text_field :name %>
-    <%= f.file_field :file %>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="col-md-4">
+    <div class="form-group">
+      <%= f.text_field :name, class: 'form-control' %>    
+    </div>
+    <div class="form-group">
+        <button type="button" class="btn btn-primary" id="btn_picture_upload"> Upload </button>    
+      <%= f.submit'Submit' , class: 'btn btn-primary' %>
+
+    </div>
+    <%= f.file_field :file %>
+    <div class="actions">
+    </div>
+    
+  </div>
+  <div class="col-md-8">
+    <img id="picture_file_preview" alt="notre image" src="" />
   </div>
 <% end %>
