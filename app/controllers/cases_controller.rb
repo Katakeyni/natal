@@ -16,7 +16,7 @@ class CasesController < ApplicationController
   # GET /cases/new
   def new
     @case = Case.new
-    4.times { @case.pictures} 
+    4.times { @case.case_picture_link.build} 
   end
 
   # GET /cases/1/edit
@@ -28,15 +28,16 @@ class CasesController < ApplicationController
   def create
     @case = Case.new(case_params)
 
-    respond_to do |format|
+    # respond_to do |format|
       if @case.save
-        format.html { redirect_to @case, notice: 'Case was successfully created.' }
-        format.json { render :show, status: :created, location: @case }
+        render plain: case_params
+        # format.html { redirect_to @case, notice: 'Case was successfully created.' }
+        # format.json { render :show, status: :created, location: @case }
       else
         format.html { render :new }
         format.json { render json: @case.errors, status: :unprocessable_entity }
       end
-    end
+    # end
   end
 
   # PATCH/PUT /cases/1
@@ -71,6 +72,6 @@ class CasesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def case_params
-      params.require(:case).permit(:response, picture: [:file])
+      params.require(:case).permit(:response, :case_picture_link)
     end
 end

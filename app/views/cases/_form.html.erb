@@ -19,8 +19,11 @@
       </div>
 
     <%= f.fields_for :case_picture_link do |link| %>
-        <%= link.file_field :picture %>
+      <%= link.fields_for :pictures do |l| %>
+          <%= l.file_field :file %>
+      <% end %>
     <% end %>
+
     <%= f.submit %>    
   </div>
 
